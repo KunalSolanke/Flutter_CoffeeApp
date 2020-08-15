@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "110306825446",
+    "firebase_url": "https://brewfirebase-99a30.firebaseio.com",
+    "project_id": "brewfirebase-99a30",
+    "storage_bucket": "brewfirebase-99a30.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:110306825446:android:07d1a5507405901a811727",
+        "android_client_info": {
+          "package_name": "com.example.brewfirebaseapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "110306825446-fptd51js8miham4q5jqo4o5je9f28krn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFlbnNKYEbgKumLl3M0BH7TBCRPgkJFko"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "110306825446-fptd51js8miham4q5jqo4o5je9f28krn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

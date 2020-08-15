@@ -1,0 +1,177 @@
+Here For adding Firebase to THe project First we will add the database setup to our applicaion
+
+
+
+
+we will install fluuter packages to interact with firebase backend properly
+
+WE WILL GET IT AT PUB.DEV
+THESE ARE IN PUBSPEC.YAML
+
+
+firebase_auth : ^0.14.0+5
+cloud_firestore : ^0.12.9+4
+
+WE SHOULD APP THE VERSION PROPERLY 
+
+NEXT PACKAGE IS CLOUDFIRESTORE 
+
+
+
+WE WILL STRUCTURE OUR APP :
+
+
+WE SHOULD BE CAREFUL ABOUT THE DESIGN 
+
+
+
+
+
+
+WRAPPER IS THE ANCHOR FOR THE APP AS IT TELLS WHICH SCREEEN TO GO
+
+
+
+
+screens.home have all the widgets of homescreen
+
+while 
+screen.autheticate will have all widgetsof authentiacte.screen
+
+
+
+GO STEP BY STEP  :
+
+DECIDE ABOT YOUR FILE STRUCTURE ,CREATE IT AND THEN MOVE FORWARDS 
+
+
+
+
+WE ARE GOIN TO USE FIREBASE AUTH FOR THE AUTH PROCESS IT MAKES IT EASIER FOR US :
+
+
+WE HAVE TO ENABLE AUTH PROCESS IN FIREBASE CONSOLE :
+
+
+ENABLE EMAIL/PASS IN AUTH/SIGN-IN METH IN CONSOLE 
+THERE WE HAVE A ANONYMOUS LOGIN WHICH IS VERY EASY WITHOUT EMAIL/PASS
+
+
+
+
+
+WE AR GOIN TO USE A SEPERATE CLASS WHICH WILL HANDLE EVERY AUTH PROCESS BE IT SIG IN OR REGISTER
+
+
+
+
+
+MAKING CUSTOMUSER FROM THE FIREBASE USER 
+
+
+
+USING STREAM :
+       WHAT IS STREAM ?
+           WRAPPER IS GOIN TO HANDLE THE AUTHENTICATION :
+           STREAM IS LIKE A REAL STREAM FROM ONE PLACE TO OTHER
+           WE WILL SET UP A STREAM BETWEEN USER AND FIRE_AUTH 
+           FIREBASE HAS A STREAMBUILT IN IT EHICH WE CAN HEAR USING A FUN ONAUTHCHANGE
+
+
+
+
+LOADING WIDGET FOR SOMEKIND OF RESPONSE WE WILL USE A SPINNER 
+
+WE WILL USE A FLUTTER SPINKIT
+
+
+
+
+
+
+import 'package:flutter/material.dart' ;
+import 'package:flutter_spinkit/flutter_spinkit.dart' ;
+
+
+class Loading extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      color:Colors.brown[100],
+      child: Center(
+        child: SpinKitChasingDots(
+          color: Colors.brown,
+          size: 50.0,
+        ),
+      ),
+    );
+  }
+  
+}
+
+
+
+
+FOR SHOWING NOW DATA WE HAVE TO SETUP THE FIRESTORE 
+
+
+THERE ARE TWO KIND OF DATABASES :
+OLDER REAL TIME DATABASES AND FIRESTORE
+
+FOR PROJECTS CREATE IT IN TEST MODE 
+
+KEY VALUE PAIRS ARE PART OF DATABASE :
+
+
+
+BOTTOMSHEET :
+
+
+
+void _showSettingspanel() {
+      showModalBottomSheet(
+          context: context,
+          builder: (context) {
+            return Container(
+              padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
+              child: Settings(),
+            );
+          });
+
+
+
+
+
+
+
+
+
+SLIDER :
+
+Slider(
+            min: 100,
+            max: 900,
+            divisions: 8,
+            onChanged: (val){
+              setState(() {
+                _currentstrength =val.round() ;
+              });
+            },
+            value: (_currentstrength ?? 100).toDouble(),
+            activeColor: Colors.brown[_currentstrength ?? 100],
+            inactiveColor: Colors.brown[_currentstrength ?? 100],
+
+          ),
+
+
+
+
+
+
+STREAMBUILDER :
+DIFFERNT WAY TO USE PROVIDEER
+
+WHY ? WE NEED TO ACCESS THE STREAMIN ONE SINGLE WIDGET 
+
+
